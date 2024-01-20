@@ -74,10 +74,10 @@ app.post("/resetpassword", Authenticate.resetPassword);
 
 // app.post("/getcurrentUser", Authenticate.currentUser);
 
-// app.use(express.static("./build"));
-// app.use("*", (req, res) => {
-//   res.sendfile("./build/index.html");
-// });
+app.use(express.static("./build"));
+app.use("*", (req, res) => {
+  res.sendfile("./build/index.html");
+});
 
 connectDb();
 const PORT = process.env.PORT || 5050;
